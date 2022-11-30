@@ -1,9 +1,7 @@
-package testPackage;
-
 public class MethodOverloading {
 
 
-    //    Method overloading 
+    //    Method overloading
     private int square(int number) {
         return number * number;
     }

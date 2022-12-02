@@ -1,4 +1,6 @@
+import Composition.Hyundai;
 import MethodOverriding.Subclass;
+import objectClass.Test;
 import testPackage.TestPackageClass;
 
 import java.util.Scanner;
@@ -11,6 +13,7 @@ public class Application {
         int minutemod = (second % 60) ;
         system.out.println(+minute +"."+minutemod);*/
 
+/*
         Scanner scan = new Scanner(System.in);
         int firstValue = scan.nextInt();
         int secondValuse = scan.nextInt();
@@ -21,19 +24,17 @@ public class Application {
         System.out.println(application.addition(firstValue,secondValuse));
         TestClass testClass = new TestClass();
         TestPackageClass testPackageClass = new TestPackageClass();
-        testPackageClass.defaultMethod();
-
-
-
-
-
-
+        testPackageClass.defaultMethod();*/
+/*      Hyundai hyundaiSonata = new Hyundai();
+        System.out.println(hyundaiSonata.toString());*/
+        Test test = new Test();
+        Test test1 = new Test();
+        System.out.println(test);
+        System.out.println(test.hashCode());
+        System.out.println(test1.hashCode());
+        System.out.println(test.getClass());
 
     }
 
 
-
-     int addition(int firstValue, int secondValue){
-        return firstValue + secondValue;
-    }
 }

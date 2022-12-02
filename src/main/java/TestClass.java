@@ -1,5 +1,5 @@
 public class TestClass {
-
+    int object;
     public String publicMethod(){
         return "public method";
     }
@@ -12,5 +12,9 @@ public class TestClass {
 
     String defaultMethod(){
         return "default method";
+    }
+
+    public static void staticMethod(){
+
     }
 }

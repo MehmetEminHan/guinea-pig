@@ -1,9 +1,6 @@
 import Composition.Hyundai;
-import MethodOverriding.Subclass;
-import objectClass.Test;
-import testPackage.TestPackageClass;
-
-import java.util.Scanner;
+import abstraction.AbstracSubClass;
+import abstraction.AbstractClass;
 
 public class Application {
     public static void main(String[] args) {
@@ -27,12 +24,14 @@ public class Application {
         testPackageClass.defaultMethod();*/
 /*      Hyundai hyundaiSonata = new Hyundai();
         System.out.println(hyundaiSonata.toString());*/
-        Test test = new Test();
-        Test test1 = new Test();
-        System.out.println(test);
-        System.out.println(test.hashCode());
-        System.out.println(test1.hashCode());
-        System.out.println(test.getClass());
+
+        AbstractClass subClass = new AbstracSubClass();
+        subClass.method();
+        subClass.sayHello(12);
+
+
+
+
 
     }
 

@@ -2,7 +2,9 @@ package Composition;
 
 public class Hyundai {
     String model = "Sonata";
-    Engine hyundaiSonataEngine = new Engine(2,198);
+    Engine hyundaiSonataEngine;
+
+
 
     @Override
     public String toString() {

@@ -1,4 +1,5 @@
 import Composition.Hyundai;
+import Generic.GenericMethod;
 import abstraction.AbstracSubClass;
 import abstraction.AbstractClass;
 
@@ -28,8 +29,8 @@ public class Application {
         AbstractClass subClass = new AbstracSubClass();
         subClass.method();
         subClass.sayHello(12);
-
-
+        Integer a = 13;
+        GenericMethod.genericMethod(a);
 
 
 

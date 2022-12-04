@@ -2,7 +2,7 @@ package abstraction;
 
 
 
-public class AbstracSubClass extends AbstractClass  {
+public class AbstracSubClass extends AbstractClass implements Comparable<String>  {
 
 
     @Override
@@ -14,5 +14,10 @@ public class AbstracSubClass extends AbstractClass  {
     @Override
     public String method() {
         return "Abstract method from abstrac subclass";
+    }
+
+    @Override
+    public int compareTo(String o) {
+        return 0;
     }
 }

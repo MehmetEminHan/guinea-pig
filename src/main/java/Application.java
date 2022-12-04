@@ -1,5 +1,4 @@
-import Composition.Hyundai;
-import Generic.GenericMethod;
+import generic.GenericMethod;
 import abstraction.AbstracSubClass;
 import abstraction.AbstractClass;
 

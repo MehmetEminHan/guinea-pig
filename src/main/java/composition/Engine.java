@@ -1,4 +1,4 @@
-package Composition;
+package composition;
 
 public class Engine {
     int enginePower;

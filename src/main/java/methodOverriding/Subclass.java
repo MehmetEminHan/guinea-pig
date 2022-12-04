@@ -1,4 +1,4 @@
-package MethodOverriding;
+package methodOverriding;
 
 public class Subclass extends MainClass{
 

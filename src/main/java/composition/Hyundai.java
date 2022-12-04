@@ -1,4 +1,4 @@
-package Composition;
+package composition;
 
 public class Hyundai {
     String model = "Sonata";

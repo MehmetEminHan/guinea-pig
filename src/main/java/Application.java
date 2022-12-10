@@ -79,7 +79,7 @@ public class Application {
 //        Min
         Optional<User> min = userList.stream().min(Comparator.comparing(User::getId));
         System.out.println(min);
-        
+
 
     }
 

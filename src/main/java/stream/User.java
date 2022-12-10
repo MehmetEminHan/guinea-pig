@@ -10,6 +10,7 @@ public class User {
     private Integer id;
     private String eMail;
     private String name;
+    private final Gender gender;
 
     @Override
     public String toString() {
@@ -17,11 +18,12 @@ public class User {
                 "id=" + id +
                 ", eMail='" + eMail + '\'' +
                 ", name='" + name + '\'' +
-                '}' + "\n";
+                ", gender=" + gender +
+                '}';
     }
 
     public void talk(){
-        System.out.println("Hi my name is "+getName());
+        System.out.println("Hi my name is "+getName()+"and my gender is " + getGender());
 
     }
 }

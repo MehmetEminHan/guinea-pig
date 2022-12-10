@@ -1,6 +1,7 @@
 import generic.GenericMethod;
 import abstraction.AbstracSubClass;
 import abstraction.AbstractClass;
+import stream.Gender;
 import stream.User;
 
 import java.util.*;
@@ -8,37 +9,6 @@ import java.util.stream.*;
 
 public class Application {
     public static void main(String[] args) {
-        /*
-        int second = scan.nextint();
-        int minute = second / 60;
-        int minutemod = (second % 60) ;
-        system.out.println(+minute +"."+minutemod);*/
-
-/*
-        Scanner scan = new Scanner(System.in);
-        int firstValue = scan.nextInt();
-        int secondValuse = scan.nextInt();
-
-        int a = (firstValue > secondValuse) ? (1) : (0);
-        System.out.println(a);
-        Application application = new Application();
-        System.out.println(application.addition(firstValue,secondValuse));
-        TestClass testClass = new TestClass();
-        TestPackageClass testPackageClass = new TestPackageClass();
-        testPackageClass.defaultMethod();*/
-/*      Hyundai hyundaiSonata = new Hyundai();
-        System.out.println(hyundaiSonata.toString());*/
-
-
-
-        /*
-        * AbstractClass subClass = new AbstracSubClass();
-        subClass.method();
-        subClass.sayHello(12);
-        Integer a = 13;
-        GenericMethod.genericMethod(a);
-
-        Runnable runnable = System.out::println;*/
 
 
         /*ArrayList<Integer> integerArrayList = new ArrayList<>();
@@ -62,33 +32,54 @@ public class Application {
 
 
         List<User> userList = new ArrayList<>();
-        userList.add(new User(1,"example@gmail.com","ahmet"));
-        userList.add(new User(2,"example2@gmail.com","mehmet"));
-        userList.add(new User(3,"example3@gmail.com","osman"));
-        userList.add(new User(4,"example4@gmail.com","william"));
-        userList.add(new User(7,"example5@gmail.com","Bridget"));
-        userList.add(new User(6,"example6@gmail.com","Adam"));
-        userList.add(new User(9,"example7@gmail.com","Abraham"));
-        userList.add(new User(8,"example8@gmail.com","Tarek"));
+        userList.add(new User(1, "example@gmail.com", "ahmet", Gender.MALE));
+        userList.add(new User(2, "example2@gmail.com", "mehmet", Gender.MALE));
+        userList.add(new User(3, "example3@gmail.com", "osman", Gender.MALE));
+        userList.add(new User(4, "example4@gmail.com", "william", Gender.MALE));
+        userList.add(new User(7, "example5@gmail.com", "Bridget", Gender.FEMALE));
+        userList.add(new User(6, "example6@gmail.com", "Adam", Gender.MALE));
+        userList.add(new User(9, "example7@gmail.com", "Abraham", Gender.MALE));
+        userList.add(new User(8, "example8@gmail.com", "Serkan", Gender.FEMALE));
 
-        userList.stream().forEach(users -> System.out.println(users.toString()));
-//        userList.stream().forEach(User::toString);
-//        userList.stream().forEach(User::talk);
-        userList.stream().forEach(user -> user.talk());
+//        Filter
+        userList.stream().filter(user -> user.getGender().equals(Gender.FEMALE)).forEach(user -> System.out.println(user));
+        List<User> femaleUsers =
+                userList.stream().filter(user -> user.getGender().equals(Gender.FEMALE)).collect(Collectors.toList());
+        femaleUsers.stream().forEach(user -> System.out.println(user));
+        System.out.println("---------------------------\n------------------------");
+
+//        Sort
+        List<User> sortedByIdList = userList.stream().sorted(Comparator.comparing(User::getId))
+                .collect(Collectors.toList());
+
+        List<User> sortedReverseByIdList = userList.stream().sorted(Comparator.comparing(User::getId).reversed())
+                .collect(Collectors.toList());
 
 
-        List<User> filteredList = userList.stream().filter(user -> user.getId()>5).collect(Collectors.toList());
-        filteredList.stream().forEach(user -> System.out.println(user));
+        sortedByIdList.stream().forEach(user -> System.out.println(user));
+        System.out.println("---------------------------\n------------------------");
+        sortedReverseByIdList.stream().forEach(user -> System.out.println(user));
 
+//        All match
+        boolean allMatch = userList.stream().allMatch(user -> user.getId() > 5);
+        System.out.println(allMatch); /*False*/
+
+//        Any match
+        boolean anyMatch = userList.stream().anyMatch(user -> user.getId() > 5);
+        System.out.println(anyMatch); /*True*/
+
+//        None match
+        boolean noneMatch = userList.stream().noneMatch(user -> user.getId() > 5);
+        System.out.println(noneMatch); /*False*/
+
+//        Max
+        Optional<User> max = userList.stream().max(Comparator.comparing(User::getId));
+        System.out.println(max);
+
+//        Min
+        Optional<User> min = userList.stream().min(Comparator.comparing(User::getId));
+        System.out.println(min);
         
-
-
-
-
-
-
-
-
 
     }
 

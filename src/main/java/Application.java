@@ -1,11 +1,12 @@
-import generic.GenericMethod;
-import abstraction.AbstracSubClass;
-import abstraction.AbstractClass;
 import stream.Gender;
 import stream.User;
 
-import java.util.*;
-import java.util.stream.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 
 public class Application {
     public static void main(String[] args) {
@@ -40,6 +41,7 @@ public class Application {
         userList.add(new User(6, "example6@gmail.com", "Adam", Gender.MALE));
         userList.add(new User(9, "example7@gmail.com", "Abraham", Gender.MALE));
         userList.add(new User(8, "example8@gmail.com", "Serkan", Gender.FEMALE));
+
 
 //        Filter
         userList.stream().filter(user -> user.getGender().equals(Gender.FEMALE)).forEach(user -> System.out.println(user));
@@ -79,6 +81,16 @@ public class Application {
 //        Min
         Optional<User> min = userList.stream().min(Comparator.comparing(User::getId));
         System.out.println(min);
+
+        int sumId = userList.stream().filter(x -> x.getId()<5).mapToInt(x -> x.getId()).sum();
+        System.out.println("Total id ---> " + sumId);
+
+        List<User> nullPointerList = new ArrayList<>();
+        nullPointerList.add(new User(1, "biyikmehmetemin@gmail.com", "Mehmet", Gender.MALE));
+        nullPointerList.add(new User(3, "ahmetakahs@gmail.com", "Ahmet", Gender.MALE));
+        nullPointerList.add(new User(2, "sskhan@gmail.com", "Samet", Gender.MALE));
+        nullPointerList.add(new User(4, "anilmirap@gmail.com", null, Gender.FEMALE));
+        nullPointerList.add(new User(5, "serkantok@gmail.com", null, null));
 
 
     }

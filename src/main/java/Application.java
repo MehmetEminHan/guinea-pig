@@ -91,7 +91,8 @@ public class Application {
         nullPointerList.add(new User(2, "sskhan@gmail.com", "Samet", Gender.MALE));
         nullPointerList.add(new User(4, "anilmirap@gmail.com", null, Gender.FEMALE));
         nullPointerList.add(new User(5, "serkantok@gmail.com", null, null));
-
+//Find max value
+        userList.stream().mapToInt(x -> x.getId).max().orElseThrow(NoSuchElementException::new);
 
     }
 

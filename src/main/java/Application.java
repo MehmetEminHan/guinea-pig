@@ -102,6 +102,7 @@ public class Application {
 
 //Find max value
         userList.stream().mapToInt(x -> x.getId).max().orElseThrow(NoSuchElementException::new);
+        // Changes
 
     }
 

@@ -85,12 +85,21 @@ public class Application {
         int sumId = userList.stream().filter(x -> x.getId()<5).mapToInt(x -> x.getId()).sum();
         System.out.println("Total id ---> " + sumId);
 
+       //        Min
+        Optional<User> min = userList.stream().min(Comparator.comparing(User::getId));
+        System.out.println(min);
+
+        int sumId = userList.stream().filter(x -> x.getId()<5).mapToInt(x -> x.getId()).sum();
+        System.out.println("Total id ---> " + sumId);
+        System.out.println(userList.stream().filter(x -> x.getId() > 5).count());
+        userList.stream().filter(Comparator.comparing(userList1))
         List<User> nullPointerList = new ArrayList<>();
         nullPointerList.add(new User(1, "biyikmehmetemin@gmail.com", "Mehmet", Gender.MALE));
         nullPointerList.add(new User(3, "ahmetakahs@gmail.com", "Ahmet", Gender.MALE));
         nullPointerList.add(new User(2, "sskhan@gmail.com", "Samet", Gender.MALE));
         nullPointerList.add(new User(4, "anilmirap@gmail.com", null, Gender.FEMALE));
         nullPointerList.add(new User(5, "serkantok@gmail.com", null, null));
+
 //Find max value
         userList.stream().mapToInt(x -> x.getId).max().orElseThrow(NoSuchElementException::new);
 
